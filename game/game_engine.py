@@ -29,7 +29,10 @@ class GameEngine:
             self.player.move(10, self.height)
 
     def update(self):
+        # Move the ball first
         self.ball.move()
+    
+        # Then check for collisions
         self.ball.check_collision(self.player, self.ai)
 
         if self.ball.x <= 0:
